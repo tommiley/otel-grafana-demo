@@ -1,4 +1,5 @@
 # OpenTelemetry - Grafana Demo
+
 Author: Connor Lindsey
 
 This demo application demonstrates how to monitor a JavaScript application using open source observability software. The following projects are used:
@@ -10,20 +11,24 @@ This demo application demonstrates how to monitor a JavaScript application using
 - [Grafana](https://grafana.com/) - Visualize all of our observability data.
 
 ## Project Structure
+
 ![App architecture](./docs/assets/app_architecture.png)
+
 - api/ - Fastify API. Instrumented with OpenTelemetry
 - app/ - Simple Next.js app.
-- db/  - Stores copy of Postgres data for persistence.
+- db/ - Stores copy of Postgres data for persistence.
 - config/ - Standard configuration for Prometheus, Promtail, Loki, etc.
 - data/ - Stores server logs
 
 ## Running the app
+
 1. Run with `npm run dev`. Requires [Docker](https://www.docker.com/) and docker-compose.
 1. Optionally, run `npm install` in `/api` and `/app`.
 1. Open the app at http://localhost
 1. View traces, logs, and metrics in Grafana at http://localhost:3000
 
 ## Additional Resources
+
 - [Grafana Demo](https://play.grafana.org/d/000000012/grafana-play-home?orgId=1)
 - [Grafana Cloud](https://grafana.com/products/cloud/) - Actually useful free tier
 - [OpenTelemetry Key Terms](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/overview.md)
@@ -31,3 +36,7 @@ This demo application demonstrates how to monitor a JavaScript application using
 - [OpenTelemetry JS Contrib](https://github.com/open-telemetry/opentelemetry-js-contrib)
 - [OpenTelemetry Status](https://opentelemetry.io/status/)
 - [UtahJS Slides](https://bit.ly/3oBobaQ)
+
+## Edits
+
+- was not running as of 9/12/22, updated needed dependencies to get to run on m1 macbook air

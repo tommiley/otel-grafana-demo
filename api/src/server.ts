@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 8080
 const server = fastify({
   logger: {
     level: "info",
-    file: `/usr/api/data/${moment().format("YYYY-MM-DD")}.log`,
+    file: `./data/${moment().format("YYYY-MM-DD")}.log`,
   },
 })
 

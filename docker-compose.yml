@@ -11,7 +11,7 @@ services:
     volumes:
       - ./db/data/:/var/lib/postgresql/data/ # Persist data locally
     ports:
-      - 5432:5432
+      - 6432:5432
   api:
     container_name: api
     build: ./api
@@ -25,7 +25,7 @@ services:
       - 8080:8080 # API
       - 9464:9464 # Metrics API
     command: ./setup.sh
-    depends_on: 
+    depends_on:
       - db
   app:
     container_name: app
@@ -35,8 +35,8 @@ services:
       - ./app:/usr/app
       - /usr/app/node_modules
     ports:
-      - 80:80
-    depends_on: 
+      - 3002:80
+    depends_on:
       - api
       - db
   # Observability services
@@ -81,7 +81,7 @@ services:
 
   grafana:
     image: grafana/grafana:main
-    environment: 
+    environment:
       # Disable authentication
       - GF_AUTH_DISABLE_LOGIN_FORM=true
       - GF_AUTH_ANONYMOUS_ENABLED=true
@@ -91,4 +91,4 @@ services:
     volumes:
       - ./config/provisioning/:/etc/grafana/provisioning
     ports:
-      - 3000:3000
+      - 3001:3000
